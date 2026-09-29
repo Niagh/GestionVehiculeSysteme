@@ -1,14 +1,15 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+fun main(){
+    val garage = Garage()
+    val voiture = Voiture("Mercedez", 2020, "verte", 5)// ça crée la voiture mais ça range pas encore dans le garage.
+    val camion = Camion("Volvo", 2018, "blanche", 12000)
+    val moto = Moto("Yamaha", 2022, "noir", false)
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+    // ici chaque appel ajoute un objet déjà créé à la liste du garage. d'ou l'intérêt de ajouterVehicule(cehicule: Vehicule).
+    garage.ajouterVehicule(voiture)
+    garage.ajouterVehicule(camion)
+    garage.ajouterVehicule(moto)
+
+    garage.afficherGarage()
+
+    garage.faireKlaxonnerTous()
 }
